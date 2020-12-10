@@ -27,17 +27,46 @@
             }
         };
 
-        var Rahul = Object.assign({}, eating, walking, talking);
+        // var Rahul = Object.assign({}, eating, walking, talking);
 
-        document.write(Rahul.eat());
-        document.write(Rahul.walk());
-        document.write(Rahul.talk());
+        // document.write(Rahul.eat());
+        // document.write(Rahul.walk());
+        // document.write(Rahul.talk());
 
-        var RoboCop = Object.assign({}, walking, talking);
+        // var RoboCop = Object.assign({}, walking, talking);
         
-        document.write(RoboCop.walk());
-        document.write(RoboCop.talk());
-        document.write(RoboCop.eat());  //Will throw an error - RoboCop.eat() is not a function
+        // document.write(RoboCop.walk());
+        // document.write(RoboCop.talk());
+        // document.write(RoboCop.eat());  //Will throw an error - RoboCop.eat() is not a function
+
+
+        //Human class
+        var Human = function(){
+
+        }
+
+        //Human class will have its own methods
+        Object.assign(Human.prototype, eating, walking, talking);
+
+        //Creating a new Human object - We can create as many Human objects. All of them will have the same methods. So we do not need to define the same methods again and again
+        var rahul = new Human();
+        document.write(rahul.eat());
+        document.write(rahul.walk());
+        document.write(rahul.talk());
+
+        //Robot class
+        var Robot = function(){
+
+        }
+
+        //Robot class will have its own methods 
+        Object.assign(Robot.prototype, walking, talking);
+
+        //Creating a new Robot object
+        var roboObj = new Robot();
+        document.write(roboObj.eat());   //Will throw an error - roboObj.eat() is not a function
+        document.write(roboObj.walk());
+        document.write(roboObj.talk());
 
     </script>
 
